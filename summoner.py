@@ -88,8 +88,11 @@ def csv_to_dict(csv_text):
 
 
 def get_process_details(process_name):
-    csv_output = subprocess.check_output(["wmic", "path", "win32_process", "where", "name like '%s'" % process_name,
-                                          "get", "caption,processid,commandline", "/format:csv"])
+    if process_name is None:
+        where_clause = []
+    else:
+        where_clause = ["where", "name like '%s'" % process_name]
+    csv_output = subprocess.check_output(["wmic", "path", "win32_process"] + where_clause + ["get", "caption,processid,commandline", "/format:csv"])
     return csv_to_dict(csv_output.decode("windows-1252"))
 
 
