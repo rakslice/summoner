@@ -109,7 +109,7 @@ class ServiceDef(object):
 
     def check_running(self):
         process_details = get_process_details(self.process_exe)
-        print("process details", process_details)
+        # print("process details", process_details)
         expected_command_line = self.get_expected_command_line()
         found = False
         for entry in process_details:
@@ -129,7 +129,7 @@ class ServiceDef(object):
         ext = self.target.rsplit(".", 1)[-1]
         if ext.lower() == "lnk":
             target_path, additional_data = read_shortcut_path(self.target)
-            print("shortcut path", repr(target_path))
+            # print("shortcut path", repr(target_path))
 
             arguments = additional_data.get("command_line_arguments")
             if arguments is None:
