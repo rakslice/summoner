@@ -97,6 +97,14 @@ def get_process_details(process_name):
 
 
 def command_line_matcher(expected_command_line, actual_command_line):
+    # print("Comparing")
+    # print(repr(expected_command_line))
+    # print("and")
+    # print(repr(actual_command_line))
+    # print("")
+
+    if expected_command_line.lower().endswith(".cmd") and os.path.isfile(expected_command_line):
+        expected_command_line = '''%s /c ""%s" "''' % (os.environ["ComSpec"], expected_command_line)
     return expected_command_line == actual_command_line
 
 

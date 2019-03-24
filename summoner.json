@@ -3,5 +3,11 @@
     "name": "proxy_mesh",
     "process_exe": "python.exe",
     "target": "C:\\Users\\Andrew Tonner\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\proxy_mesh.lnk"
+  },
+
+  {
+    "name": "jenkins",
+    "process_exe": "cmd.exe",
+    "target": "I:\\jenkins\\start jenkins.lnk"
   }
 ]
