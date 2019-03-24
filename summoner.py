@@ -27,7 +27,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             template_dir = os.path.join(script_path, "templates")
-            print(self.path)
             self.send_response(HTTPStatus.OK)
 
             main_page_template_filename = os.path.join(template_dir, "main.html")
