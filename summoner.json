@@ -6,7 +6,7 @@
   },
 
   {
-    "name": "jenkins",
+    "name": "<a href=\"http://sandsys.local:8080\">jenkins</a>",
     "process_exe": "cmd.exe",
     "target": "I:\\jenkins\\start jenkins.lnk"
   }
